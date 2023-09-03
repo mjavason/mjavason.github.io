@@ -1,0 +1,115 @@
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Base styles for the body */
+body {
+    background-color: #333; /* Dark background color */
+    color: #fff; /* White text color */
+    margin: 0;
+    font-family: Arial, sans-serif; /* Choose a suitable font-family */
+}
+
+/* Header styles */
+nav {
+    background-color: #007acc; /* Blue background color */
+    padding: 10px 0;
+}
+
+  .logo{
+    width: 30%;
+    display:inline-block;
+    overflow:hidden;
+    text-align:center;
+    /* background-color:orange; */
+    margin:5px;
+    padding:5px;
+    /* border: 5px solid green; */
+    overflow: auto;
+    }
+
+.logo h2 {
+    margin: 0;
+    padding: 5px;
+    font-size: 24px; /* Increased font size */
+    color: #fff; /* White text color */
+}
+
+.navbar{
+    width:60%;
+    display:inline-block;
+    text-align:center;
+    padding:5px;
+    margin:5px;
+    overflow:hidden;
+    /* background-color: 5px green solid; */
+    }
+
+.navbar ul {
+    list-style-type: none; /* Remove list bullets */
+}
+
+.navbar li {
+    display: inline;
+    margin-right: 20px; /* Increased spacing between navigation items */
+}
+
+.navbar a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.navbar a:hover {
+    color: #333; /* Blue color on hover */
+    font-size: large;
+}
+
+/* Content section styles */
+.chief {
+    width: 85%;
+    margin: 20px auto; /* Center content horizontally */
+    padding: 20px;
+    background-color: #444; /* Darker background color */
+    min-height: 300px;
+    border: 2px solid #f90; /* Orange border */
+}
+
+h1 {
+    font-size: 24px; /* Increased font size */
+    text-align: center;
+    margin-bottom: 20px; /* Add some spacing below the heading */
+}
+
+#main-button {
+    font-size: 1.5rem; /* Slightly reduced button font size */
+    padding: 10px 20px; /* Increased button padding */
+    background-color: #007acc; /* Blue button background color */
+    color: #fff; /* White text color */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth color transition */
+}
+
+#main-button:hover {
+    background-color: #005f9f; /* Darker blue on hover */
+}
+
+.main-body {
+    margin: 20px auto; /* Center content horizontally */
+    padding: 20px;
+    border: 2px dashed #4caf50; /* Green dashed border */
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    margin-top: 20px; /* Increased top margin */
+    padding: 10px 0;
+    background-color: #007acc; /* Blue footer background color */
+    color: #fff; /* White text color */
+}
