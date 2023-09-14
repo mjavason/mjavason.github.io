@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://bitstarbtrade.site/mike/img/meta/samplepage.png">
+    <script src="index.js"></script>
+    <title>Day 1 - 100DaysOfAPIAwesomeness</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav_general">
+            <div class="logo">
+                <p>#100DaysOfAPIAwesomeness</p>
+                <h2>Day 1 </h2>
+            </div>
+            <div class="navbar">
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="chief">
+        <h1>Welcome to my Home page showcasing the navigation bar</h1>
+        <div class="main-body">
+            <button id="main-button" onclick="handleButtonClick()">Let's Go</button>
+        </div>
+    </div>
+<footer>
+    <p>&copy; 2023 Techokai</p>
+</footer>
+
+
+
+
+
+    <script>
+        // Define the sendRequest function here (as shown in the previous response)
+
+        // Function to handle the button click
+        function handleButtonClick() {
+            const url = 'https://jsonplaceholder.typicode.com/posts'; // Replace with your API URL
+            sendRequest('GET', url, null, (data) => {
+                // Handle the response data here
+                console.log('GET success:', data);
+                // You can update the DOM or perform other actions with the data
+            }, (error) => {
+                // Handle errors here
+                console.error('GET error:', error);
+            });
+        }
+
+        // Attach a click event listener to the button
+        const getDataButton = document.getElementById('getDataButton');
+        getDataButton.addEventListener('click', handleButtonClick);
+    </script>
+</body>
+
+</html>
