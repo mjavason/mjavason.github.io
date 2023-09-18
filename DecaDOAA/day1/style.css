@@ -11,6 +11,9 @@ body {
   color: #fff; /* White text color */
   margin: 0;
   font-family: Arial, sans-serif; /* Choose a suitable font-family */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Make sure the body takes at least the full viewport height */
 }
 
 /* Header styles */
@@ -24,11 +27,8 @@ nav {
   display: inline-block;
   overflow: hidden;
   text-align: center;
-  /* background-color:orange; */
   margin: 5px;
   padding: 5px;
-  /* border: 5px solid green; */
-  overflow: auto;
 }
 
 .logo h2 {
@@ -39,13 +39,11 @@ nav {
 }
 
 .navbar {
-  width: 60%;
+  width: 67%;
   display: inline-block;
-  text-align: center;
+  text-align: right;
   padding: 5px;
   margin: 5px;
-  overflow: hidden;
-  /* background-color: 5px green solid; */
 }
 
 .navbar ul {
@@ -54,7 +52,7 @@ nav {
 
 .navbar li {
   display: inline;
-  margin-right: 20px; /* Increased spacing between navigation items */
+  margin-right: 5rem; /* Increased spacing between navigation items */
 }
 
 .navbar a {
@@ -76,7 +74,8 @@ nav {
   padding: 20px;
   background-color: #444; /* Darker background color */
   min-height: 300px;
-  border: 2px solid #f90; /* Orange border */
+  border: 2px solid #f90;
+  /* height: 100%; */
 }
 
 h1 {
@@ -107,9 +106,77 @@ h1 {
 
 /* Footer styles */
 footer {
+  flex-shrink: 0; /* Prevent the footer from shrinking */
   text-align: center;
-  margin-top: 20px; /* Increased top margin */
+  margin-top: auto; /* Push the footer to the bottom */
   padding: 10px 0;
   background-color: #007acc; /* Blue footer background color */
   color: #fff; /* White text color */
+}
+
+/* Existing CSS styles (no changes) */
+
+/* New styles for the login form */
+#login-form {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #555; /* Darker background color */
+  /* border: 2px solid #f90;
+}
+
+#login-form h1 {
+  font-size: 24px; /* Increased font size */
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff; /* White text color */
+}
+
+#login-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #fff; /* White text color */
+}
+
+#login-form input[type='text'],
+#login-form input[type='password'] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  background-color: #ccc; /* Light gray background */
+  border: 1px solid #999; /* Gray border */
+}
+
+#login-form button {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  background-color: #007acc; /* Blue button background color */
+  color: #fff; /* White text color */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth color transition */
+}
+
+#login-form button:hover {
+  background-color: #005f9f; /* Darker blue on hover */
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 480px) {
+  #login-form {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  #login-form input[type='text'],
+  #login-form input[type='password'] {
+    font-size: 14px;
+  }
+
+  #login-form button {
+    font-size: 16px;
+  }
 }
