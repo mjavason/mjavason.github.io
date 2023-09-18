@@ -39,9 +39,9 @@ nav {
 }
 
 .navbar {
-  width: 60%;
+  width: 67%;
   display: inline-block;
-  text-align: center;
+  text-align: right;
   padding: 5px;
   margin: 5px;
 }
@@ -52,7 +52,7 @@ nav {
 
 .navbar li {
   display: inline;
-  margin-right: 20px; /* Increased spacing between navigation items */
+  margin-right: 5rem; /* Increased spacing between navigation items */
 }
 
 .navbar a {
@@ -74,7 +74,8 @@ nav {
   padding: 20px;
   background-color: #444; /* Darker background color */
   min-height: 300px;
-  border: 2px solid #f90; /* Orange border */
+  border: 2px solid #f90;
+  /* height: 100%; */
 }
 
 h1 {
@@ -103,7 +104,6 @@ h1 {
   border: 2px dashed #4caf50; /* Green dashed border */
 }
 
-
 /* Footer styles */
 footer {
   flex-shrink: 0; /* Prevent the footer from shrinking */
@@ -114,7 +114,6 @@ footer {
   color: #fff; /* White text color */
 }
 
-
 /* Existing CSS styles (no changes) */
 
 /* New styles for the login form */
@@ -123,7 +122,7 @@ footer {
   margin: 0 auto;
   padding: 20px;
   background-color: #555; /* Darker background color */
-  border: 2px solid #f90; /* Orange border */
+  /* border: 2px solid #f90;
 }
 
 #login-form h1 {
@@ -140,8 +139,8 @@ footer {
   color: #fff; /* White text color */
 }
 
-#login-form input[type="text"],
-#login-form input[type="password"] {
+#login-form input[type='text'],
+#login-form input[type='password'] {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
@@ -172,8 +171,8 @@ footer {
     padding: 10px;
   }
 
-  #login-form input[type="text"],
-  #login-form input[type="password"] {
+  #login-form input[type='text'],
+  #login-form input[type='password'] {
     font-size: 14px;
   }
 
