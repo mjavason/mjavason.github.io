@@ -24,7 +24,7 @@ nav {
 .logo {
   width: 30%;
   display: inline-block;
-  overflow: overlay;
+  overflow: wrap;
   text-align: center;
   margin: 5px;
   padding: 5px;
