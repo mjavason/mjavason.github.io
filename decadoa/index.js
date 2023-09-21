@@ -71,7 +71,7 @@ function isUserLoggedIn() {
 
 function userIsLoggedIn() {
   const session = getSessionToken();
-  if (!session) {
+  if (session) {
     redirectToPage('index.html');
     return console.log('Logged in successfully');
   } else {
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!logoutButton) {
   } else {
     logoutButton.addEventListener('click', () => {
-      deleteSessionToken;
+      deleteSessionToken();
       redirectToPage('login.html');
     });
   }
