@@ -16,6 +16,9 @@
 </head>
 
 <body>
+    <script>
+        userIsLoggedIn();
+    </script>
     <nav>
         <div class="logo">
             <h2>#100DaysOfAPIAwesomeness</h2>
@@ -35,40 +38,33 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
 
-            <button type="submit">Login</button>
+            <button type="submit" id="login">Login</button>
         </form>
     </div>
-
-
 
     <footer>
         <p>&copy; 2023 #100DaysOfAPIAwesomeness</p>
     </footer>
-
-
-
-
-
     <script>
-        console.log("REPLACE WITH API KEY");
-        // Define the sendRequest function here (as shown in the previous response)
+        // console.log("REPLACE WITH API KEY");
+        // // Define the sendRequest function here (as shown in the previous response)
 
-        // Function to handle the button click
-        function handleButtonClick() {
-            const url = 'https://jsonplaceholder.typicode.com/posts'; // Replace with your API URL
-            sendRequest('GET', url, null, (data) => {
-                // Handle the response data here
-                console.log('GET success:', data);
-                // You can update the DOM or perform other actions with the data
-            }, (error) => {
-                // Handle errors here
-                console.error('GET error:', error);
-            });
-        }
+        // // Function to handle the button click
+        // function handleButtonClick() {
+        //     const url = 'https://jsonplaceholder.typicode.com/posts'; // Replace with your API URL
+        //     sendRequest('GET', url, null, (data) => {
+        //         // Handle the response data here
+        //         console.log('GET success:', data);
+        //         // You can update the DOM or perform other actions with the data
+        //     }, (error) => {
+        //         // Handle errors here
+        //         console.error('GET error:', error);
+        //     });
+        // }
 
-        // Attach a click event listener to the button
-        const getDataButton = document.getElementById('getDataButton');
-        getDataButton.addEventListener('click', handleButtonClick);
+        // // Attach a click event listener to the button
+        // const getDataButton = document.getElementById('getDataButton');
+        // getDataButton.addEventListener('click', handleButtonClick);
     </script>
 </body>
 

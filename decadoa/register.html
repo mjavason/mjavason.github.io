@@ -12,13 +12,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:image" content="https://bitstarbtrade.site/mike/img/meta/samplepage.png">
     <script src="index.js"></script>
-    <title>Register Page - 100DaysOfAPIAwesomeness</title>
+    <title>Register - 100DaysOfAPIAwesomeness</title>
 </head>
 
 <body>
+    <script>
+        isUserLoggedIn();
+    </script>
     <nav>
         <div class="logo">
-            <h2>Day 1 </h2>
+            <h2>#100DaysOfAPIAwesomeness</h2>
         </div>
         <div class="navbar">
             <ul>
@@ -27,7 +30,7 @@
         </div>
     </nav>
     <div class="chief">
-        <h1>Login</h1>
+        <h1>Register</h1>
         <form id="login-form">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
@@ -50,25 +53,25 @@
 
 
     <script>
-        console.log("REPLACE WITH API KEY");
-        // Define the sendRequest function here (as shown in the previous response)
+        // console.log("REPLACE WITH API KEY");
+        // // Define the sendRequest function here (as shown in the previous response)
 
-        // Function to handle the button click
-        function handleButtonClick() {
-            const url = 'https://jsonplaceholder.typicode.com/posts'; // Replace with your API URL
-            sendRequest('GET', url, null, (data) => {
-                // Handle the response data here
-                console.log('GET success:', data);
-                // You can update the DOM or perform other actions with the data
-            }, (error) => {
-                // Handle errors here
-                console.error('GET error:', error);
-            });
-        }
+        // // Function to handle the button click
+        // function handleButtonClick() {
+        //     const url = 'https://jsonplaceholder.typicode.com/posts'; // Replace with your API URL
+        //     sendRequest('GET', url, null, (data) => {
+        //         // Handle the response data here
+        //         console.log('GET success:', data);
+        //         // You can update the DOM or perform other actions with the data
+        //     }, (error) => {
+        //         // Handle errors here
+        //         console.error('GET error:', error);
+        //     });
+        // }
 
-        // Attach a click event listener to the button
-        const getDataButton = document.getElementById('getDataButton');
-        getDataButton.addEventListener('click', handleButtonClick);
+        // // Attach a click event listener to the button
+        // const getDataButton = document.getElementById('getDataButton');
+        // getDataButton.addEventListener('click', handleButtonClick);
     </script>
 </body>
 
