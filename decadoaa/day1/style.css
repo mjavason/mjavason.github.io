@@ -39,9 +39,9 @@ nav {
 }
 
 .navbar {
-  width: 60%;
+  width: 67%;
   display: inline-block;
-  text-align: center;
+  text-align: right;
   padding: 5px;
   margin: 5px;
 }
@@ -52,7 +52,7 @@ nav {
 
 .navbar li {
   display: inline;
-  margin-right: 20px; /* Increased spacing between navigation items */
+  margin-right: 5rem; /* Increased spacing between navigation items */
 }
 
 .navbar a {
@@ -74,7 +74,8 @@ nav {
   padding: 20px;
   background-color: #444; /* Darker background color */
   min-height: 300px;
-  border: 2px solid #f90; /* Orange border */
+  border: 2px solid #f90;
+  /* height: 100%; */
 }
 
 h1 {
