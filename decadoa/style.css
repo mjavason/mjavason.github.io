@@ -26,7 +26,7 @@ nav {
 }
 
 .center {
-  text-align: block;
+  text-align: center;
 }
 
 .logo {
@@ -79,8 +79,7 @@ nav {
 .chief {
   margin: 20px auto; /* Center content horizontally */
   /* height: 100%; */
-  width: 85%;
-  padding: 20px;
+  width: 95%;
   background-color: #fff; /* Darker background color */
   min-height: 300px;
   /* border: 2px solid #f90; */
@@ -89,11 +88,11 @@ nav {
 }
 
 h1 {
-  font-size: 4rem; /* Increased font size */
+  font-size: 2.5rem; /* Increased font size */
   font-weight: 700;
   text-align: center;
   margin-bottom: 20px; /* Add some spacing below the heading */
-  line-height: 79%;
+  line-height: 80%;
   letter-spacing: -0.09rem;
 }
 
