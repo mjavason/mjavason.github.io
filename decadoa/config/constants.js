@@ -1,9 +1,0 @@
-const CONSTANTS = {
-MESSAGES:{
-
-},
-
-TITLES:{
-    
-}
-}
