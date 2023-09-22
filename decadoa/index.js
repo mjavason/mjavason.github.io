@@ -220,10 +220,32 @@ function logout() {
   });
 }
 
+function checkAndCallFunction(requiredFields, callback) {
+  // Check if all required fields are filled
+  const areAllFilled = requiredFields.every((fieldId) => {
+    const field = document.getElementById(fieldId);
+    return field && field.value.trim() !== '';
+  });
+
+  if (areAllFilled) {
+    // Call the provided callback function when all required fields are filled
+    if (typeof callback === 'function') {
+      callback();
+    }
+  } else {
+    // Display a SweetAlert with an error message
+    Swal.fire({
+      icon: 'error',
+      title: 'Missing Form Items',
+      text: 'Please fill out all required fields.',
+    });
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
-  // Attach a click event listener to the button
   const logoutButton = document.getElementById('logout');
-  const loginButton = document.getElementById('login');
+  // const loginButton = document.getElementById('login');
+  const loginForm = document.getElementById('login-form');
 
   if (!logoutButton) {
   } else {
@@ -232,14 +254,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  if (!loginButton) {
+  // if (!loginButton) {
+  // } else {
+  //   loginButton.addEventListener('click', () => {
+  //     login();
+  //   });
+  // }
+
+  if (!loginForm) {
+    console.log('login form not found');
   } else {
-    loginButton.addEventListener('click', () => {
-      login();
+    loginForm.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      const requiredFields = ['username', 'password'];
+      checkAndCallFunction(requiredFields, login('username', 'password'));
     });
   }
 });
-
 ///<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<         >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ///<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<         >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ///<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<         >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
