@@ -120,9 +120,52 @@ function userIsLoggedIn() {
   }
 }
 
+function showAlert(title = null, message = null, type = null) {
+  Swal.fire({
+    title: 'Error!',
+    text: 'Do you want to continue',
+    icon: 'error',
+    confirmButtonText: 'Cool',
+  });
+}
+
 function redirectToPage(page) {
   window.location.href = page;
 }
+
+function login() {
+  setSessionToken(12345);
+
+  Swal.fire({
+    icon: 'success',
+    title: 'Login Successful',
+    text: 'You have successfully logged in!',
+    confirmButtonText: 'OK',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      redirectToPage('index.html');
+    }
+  });
+}
+
+function logout() {
+  Swal.fire({
+    icon: 'warning',
+    title: 'Logout Confirmation',
+    text: 'Are you sure you want to log out?',
+    showCancelButton: true,
+    confirmButtonText: 'Yes, Logout',
+    cancelButtonText: 'Cancel',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // User clicked "Yes, Logout," perform the logout action
+      deleteSessionToken();
+      redirectToPage('login.html');
+    }
+    // If the user clicked "Cancel," no action is taken
+  });
+}
+
 
 document.addEventListener('DOMContentLoaded', function () {
   // Attach a click event listener to the button
@@ -132,16 +175,14 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!logoutButton) {
   } else {
     logoutButton.addEventListener('click', () => {
-      deleteSessionToken();
-      redirectToPage('login.html');
+      logout();
     });
   }
 
   if (!loginButton) {
   } else {
     loginButton.addEventListener('click', () => {
-      setSessionToken(12345);
-      redirectToPage('index.html');
+      login();
     });
   }
 });
