@@ -5,12 +5,8 @@
   padding: 0;
 }
 
-a :hover {
-  color: #333;
-}
-
 a {
-  color: #fff;
+  color: #444;
 }
 
 /* Base styles for the body */
@@ -29,24 +25,20 @@ nav {
   padding: 10px 0;
 }
 
-.center{
+.center {
   text-align: block;
 }
 
 .logo {
   width: 30%;
   display: inline-block;
-  /* overflow: auto; */
   text-align: center;
   margin: 5px;
-  padding: 5px;
   /* border: red solid 5px; */
 }
 
 .logo h2 {
-  margin: 0;
-  padding: 5px;
-  font-size: 24px; /* Increased font size */
+  font-size: 4rem; /* Increased font size */
   color: #fff; /* White text color */
 }
 
@@ -69,7 +61,7 @@ nav {
 }
 
 .navbar a {
-  font-size: 18px;
+  font-size: 1rem;
   text-decoration: none;
   color: #fff;
   transition: color 0.3s; /* Smooth color transition */
@@ -85,8 +77,9 @@ nav {
 
 /* Content section styles */
 .chief {
+  margin: 20px auto; /* Center content horizontally */
+  /* height: 100%; */
   width: 85%;
-  margin: 20px 0; /* Center content horizontally */
   padding: 20px;
   background-color: #fff; /* Darker background color */
   min-height: 300px;
@@ -98,7 +91,7 @@ nav {
 h1 {
   font-size: 4rem; /* Increased font size */
   font-weight: 700;
-  text-align: left;
+  text-align: center;
   margin-bottom: 20px; /* Add some spacing below the heading */
   line-height: 79%;
   letter-spacing: -0.09rem;
@@ -126,6 +119,7 @@ h1 {
 
 /* Footer styles */
 footer {
+  font-size: 1rem;
   flex-shrink: 0; /* Prevent the footer from shrinking */
   text-align: center;
   margin-top: auto; /* Push the footer to the bottom */
@@ -166,7 +160,7 @@ footer {
   padding: 10px;
   margin-bottom: 15px;
   font-size: 16px;
-  background-color: #ccc; /* Light gray background */
+  /* background-color: #ccc; Light gray background */
   border: 1px solid #999; /* Gray border */
 }
 
@@ -187,9 +181,13 @@ footer {
 
 /* Responsive styles for smaller screens */
 @media screen and (max-width: 480px) {
+  nav {
+    display: block;
+    text-align: right;
+  }
+  
   .logo {
-    display: inline-block;
-    overflow: auto;
+   text-align: center;
   }
 
   #login-form {
