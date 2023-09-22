@@ -136,7 +136,7 @@ footer {
   margin: 0 auto;
   padding: 20px;
   background-color: #555; /* Darker background color */
-  /* border: 2px solid #f90;
+border-radius: 5%;
 }
 
 #login-form h1 {
