@@ -5,10 +5,18 @@
   padding: 0;
 }
 
+a :hover {
+  color: #333;
+}
+
+a {
+  color: #fff;
+}
+
 /* Base styles for the body */
 body {
-  background-color: #333; /* Dark background color */
-  color: #fff; /* White text color */
+  background-color: #fff; /* Dark background color */
+  color: #444; /* White text color */
   font-family: Arial, sans-serif; /* Choose a suitable font-family */
   display: flex;
   flex-direction: column;
@@ -21,10 +29,14 @@ nav {
   padding: 10px 0;
 }
 
+.center{
+  text-align: block;
+}
+
 .logo {
   width: 30%;
   display: inline-block;
-  overflow: wrap;
+  /* overflow: auto; */
   text-align: center;
   margin: 5px;
   padding: 5px;
@@ -52,8 +64,8 @@ nav {
 }
 
 .navbar li {
-  display: inline;
-  margin-right: 5rem; /* Increased spacing between navigation items */
+  display: inline-block;
+  margin-right: 1rem; /* Increased spacing between navigation items */
 }
 
 .navbar a {
@@ -64,25 +76,32 @@ nav {
 }
 
 .navbar a:hover {
+  /* padding: 10px; */
   color: #333; /* Blue color on hover */
-  font-size: large;
+  /* background-color: white; */
+  /* border-radius: 25%; */
+  transition: 0.5s;
 }
 
 /* Content section styles */
 .chief {
   width: 85%;
-  margin: 20px auto; /* Center content horizontally */
+  margin: 20px 0; /* Center content horizontally */
   padding: 20px;
-  background-color: #444; /* Darker background color */
+  background-color: #fff; /* Darker background color */
   min-height: 300px;
-  border: 2px solid #f90;
+  /* border: 2px solid #f90; */
   /* height: 100%; */
+  padding: 1em 10%;
 }
 
 h1 {
-  font-size: 24px; /* Increased font size */
-  text-align: center;
+  font-size: 4rem; /* Increased font size */
+  font-weight: 700;
+  text-align: left;
   margin-bottom: 20px; /* Add some spacing below the heading */
+  line-height: 79%;
+  letter-spacing: -0.09rem;
 }
 
 #main-button {
@@ -141,6 +160,7 @@ footer {
 }
 
 #login-form input[type='text'],
+#login-form input[type='email'],
 #login-form input[type='password'] {
   width: 100%;
   padding: 10px;
@@ -167,6 +187,11 @@ footer {
 
 /* Responsive styles for smaller screens */
 @media screen and (max-width: 480px) {
+  .logo {
+    display: inline-block;
+    overflow: auto;
+  }
+
   #login-form {
     max-width: 100%;
     padding: 10px;
