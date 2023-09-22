@@ -136,7 +136,8 @@ footer {
   margin: 0 auto;
   padding: 20px;
   background-color: #555; /* Darker background color */
-border-radius: 5%;
+  border-radius: 5%;
+  margin-bottom: 1rem;
 }
 
 #login-form h1 {
@@ -185,9 +186,9 @@ border-radius: 5%;
     display: block;
     text-align: right;
   }
-  
+
   .logo {
-   text-align: center;
+    text-align: center;
   }
 
   #login-form {
