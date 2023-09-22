@@ -128,15 +128,14 @@ footer {
   color: #fff; /* White text color */
 }
 
-/* Existing CSS styles (no changes) */
-
 /* New styles for the login form */
 #login-form {
-  max-width: 300px;
+  max-width: 400px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 2rem;
   background-color: #555; /* Darker background color */
-border-radius: 5%;
+  border-radius: 5%;
+  margin-bottom: 1rem;
 }
 
 #login-form h1 {
@@ -185,14 +184,14 @@ border-radius: 5%;
     display: block;
     text-align: right;
   }
-  
+
   .logo {
-   text-align: center;
+    text-align: center;
   }
 
   #login-form {
     max-width: 100%;
-    padding: 10px;
+    padding: 1rem;
   }
 
   #login-form input[type='text'],
