@@ -132,9 +132,9 @@ footer {
 
 /* New styles for the login form */
 #login-form {
-  max-width: 300px;
+  max-width: 400px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 2rem;
   background-color: #555; /* Darker background color */
   border-radius: 5%;
   margin-bottom: 1rem;
