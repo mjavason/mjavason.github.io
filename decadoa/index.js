@@ -135,16 +135,14 @@ function redirectToPage(page) {
 
 function login() {
   setSessionToken(12345);
-
   Swal.fire({
     icon: 'success',
     title: 'Login Successful',
     text: 'You have successfully logged in!',
     confirmButtonText: 'OK',
-  }).then((result) => {
-    if (result.isConfirmed) {
-      redirectToPage('index.html');
-    }
+    allowOutsideClick: true, // Allow clicking outside the modal
+  }).then(() => {
+    redirectToPage('index.html');
   });
 }
 
@@ -156,6 +154,7 @@ function logout() {
     showCancelButton: true,
     confirmButtonText: 'Yes, Logout',
     cancelButtonText: 'Cancel',
+    allowOutsideClick: true, // Allow clicking outside the modal
   }).then((result) => {
     if (result.isConfirmed) {
       // User clicked "Yes, Logout," perform the logout action
@@ -165,7 +164,6 @@ function logout() {
     // If the user clicked "Cancel," no action is taken
   });
 }
-
 
 document.addEventListener('DOMContentLoaded', function () {
   // Attach a click event listener to the button
