@@ -120,20 +120,62 @@ function userIsLoggedIn() {
   }
 }
 
-function showAlert(title = null, message = null, type = null) {
-  Swal.fire({
-    title: 'Error!',
-    text: 'Do you want to continue',
-    icon: 'error',
-    confirmButtonText: 'Cool',
-  });
-}
-
 function redirectToPage(page) {
   window.location.href = page;
 }
 
-function login() {
+function showAlert(
+  icon,
+  title,
+  message,
+  confirmButtonText,
+  cancelButtonText,
+  callback
+) {
+  Swal.fire({
+    icon: icon,
+    title: title,
+    text: message,
+    confirmButtonText: confirmButtonText,
+    cancelButtonText: cancelButtonText,
+    showCancelButton: true, // Show the Cancel button
+    allowOutsideClick: () => Swal.getPopup().isOutsideClickAllowed(), // Enable outside click
+  }).then((result) => {
+    if (result.isConfirmed) {
+      if (callback) {
+        callback();
+      }
+    } else if (result.dismiss === Swal.DismissReason.cancel) {
+      // Handle Cancel button click here, or leave it empty
+    }
+  });
+}
+
+function showSuccessAlert() {
+  Swal.fire({
+    icon: 'success',
+    title: 'Success',
+    text: 'Operation completed successfully!',
+    confirmButtonText: 'OK',
+    allowOutsideClick: true,
+  }).then(() => {
+    // Handle OK button click here, or leave it empty
+  });
+}
+
+function showErrorAlert() {
+  Swal.fire({
+    icon: 'error',
+    title: 'Error',
+    text: 'An error occurred!',
+    confirmButtonText: 'OK',
+    allowOutsideClick: true,
+  }).then(() => {
+    // Handle OK button click here, or leave it empty
+  });
+}
+
+function login(email, password) {
   setSessionToken(12345);
   Swal.fire({
     icon: 'success',
@@ -141,6 +183,19 @@ function login() {
     text: 'You have successfully logged in!',
     confirmButtonText: 'OK',
     allowOutsideClick: true, // Allow clicking outside the modal
+  }).then(() => {
+    redirectToPage('index.html');
+  });
+}
+
+function register(email, password, confirmPassword) {
+  setSessionToken(12345);
+  Swal.fire({
+    icon: 'success',
+    title: 'Registration Successful',
+    text: 'You have successfully registered!',
+    confirmButtonText: 'OK',
+    allowOutsideClick: true,
   }).then(() => {
     redirectToPage('index.html');
   });
