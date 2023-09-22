@@ -1,0 +1,11 @@
+Certainly, here are the unique colors used in the provided CSS file without repetition:
+
+1. `#fff` (White)
+2. `#007acc` (Blue)
+3. `#444` (Dark Gray)
+4. `#333` (Darker Blue)
+5. `#005f9f` (Darker Blue)
+6. `#999` (Gray)
+7. `#555` (Darker Gray)
+
+These are the unique colors used in the CSS file.
