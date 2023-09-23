@@ -2,10 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <!-- ... (existing head content) ... -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="sweetalert-custom.css">
     <meta charset="UTF-8">
@@ -21,9 +18,6 @@
 </head>
 
 <body>
-    <script>
-        isUserLoggedIn();
-    </script>
     <div id="loading-container">
         <img src="assets/loading-spinner.gif" alt="Loading..." />
     </div>
@@ -33,43 +27,103 @@
         </div>
         <div class="navbar">
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <!-- <li><a href="index.html">Home</a></li> -->
                 <li><a href="about.html">About</a></li>
-                <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li id="logout" onclick=""><a href="#">Logout</a></li>
             </ul>
         </div>
     </nav>
     <div class="chief">
-
+        <h1>Project Showcase</h1>
+        <!-- Create links for 24 demo days -->
+        <a href="#" class="day-link" data-day="1">
+            <div class="day-box">
+                <div class="day-number">#1</div>
+                <p>Weather Forecast App</p>
+            </div>
+        </a>
+        
+        <a href="#" class="day-link" data-day="2">
+            <div class="day-box">
+                <div class="day-number">#2</div>
+                <p>Stock Price Tracker</p>
+            </div>
+        </a>
+        
+        <a href="#" class="day-link" data-day="3">
+            <div class="day-box">
+                <div class="day-number">#3</div>
+                <p>Recipe Finder</p>
+            </div>
+        </a>
+        
+        <a href="#" class="day-link" data-day="4">
+            <div class="day-box">
+                <div class="day-number">#4</div>
+                <p>Task Manager</p>
+            </div>
+        </a>
+        
+        <a href="#" class="day-link" data-day="5">
+            <div class="day-box">
+                <div class="day-number">#5</div>
+                <p>News Aggregator</p>
+            </div>
+        </a>
+        
+        <a href="#" class="day-link" data-day="6">
+            <div class="day-box">
+                <div class="day-number">#6</div>
+                <p>Language Translator</p>
+            </div>
+        </a>
+        
+        <a href="#" class="day-link" data-day="7">
+            <div class="day-box">
+                <div class="day-number">#7</div>
+                <p>Movie Recommendation</p>
+            </div>
+        </a>
+        
+        <a href="#" class="day-link" data-day="8">
+            <div class="day-box">
+                <div class="day-number">#8</div>
+                <p>Social Media Dashboard</p>
+            </div>
+        </a>
+        
+        <a href="#" class="day-link" data-day="9">
+            <div class="day-box">
+                <div class="day-number">#9</div>
+                <p>Payment Gateway Integration</p>
+            </div>
+        </a>
+        
+        <a href="#" class="day-link" data-day="10">
+            <div class="day-box">
+                <div class="day-number">#10</div>
+                <p>Travel Planner</p>
+            </div>
+        </a>
+        
     </div>
+    
+    <!-- Pagination section -->
+    <div class="pagination">
+        <a href="#" class="prev">Previous</a>
+        <a href="#" class="page">1</a>
+        <a href="#" class="page">2</a>
+        <a href="#" class="page">3</a>
+        <a href="#" class="page">...</a>
+        <a href="#" class="next">Next</a>
+    </div>
+    
+
+
 
     <footer>
         <p>&copy; 2023 #100DaysOfAPIAwesomeness</p>
     </footer>
-    <script>
-        // console.log("REPLACE WITH API KEY");
-        // // Define the sendRequest function here (as shown in the previous response)
-
-        // // Function to handle the button click
-        // function handleButtonClick() {
-        //     const url = 'https://jsonplaceholder.typicode.com/posts'; // Replace with your API URL
-        //     sendRequest('GET', url, null, (data) => {
-        //         // Handle the response data here
-        //         console.log('GET success:', data);
-        //         // You can update the DOM or perform other actions with the data
-        //     }, (error) => {
-        //         // Handle errors here
-        //         console.error('GET error:', error);
-        //     });
-        // }
-
-        // // Attach a click event listener to the button
-        // const getDataButton = document.getElementById('getDataButton');
-        // getDataButton.addEventListener('click', handleButtonClick);
-    </script>
-
 </body>
 
 </html>
