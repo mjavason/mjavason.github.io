@@ -91,7 +91,7 @@ h1 {
   font-size: 2.5rem; /* Increased font size */
   font-weight: 700;
   text-align: center;
-  margin-bottom: 20px; /* Add some spacing below the heading */
+  margin-bottom: 3rem; /* Add some spacing below the heading */
   line-height: 80%;
   letter-spacing: -0.09rem;
 }
@@ -319,6 +319,14 @@ footer {
   font-weight: bold;
 }
 
+.disabled-element {
+  pointer-events: none;
+  /* Other styles for the disabled element */
+  opacity: 0.5; /* Optionally reduce opacity to visually indicate it's disabled */
+  /* You can also change the cursor to indicate that it's not clickable */
+  cursor: not-allowed;
+}
+
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 /* Responsive styles for smaller screens */
@@ -355,6 +363,10 @@ footer {
 /* Add responsive styles for day boxes */
 @media screen and (max-width: 768px) {
   .day-box {
-    font-size: 1.2rem; /* Adjust font size for smaller screens */
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+
+  .day-number {
+    font-size: 1.2rem;
   }
 }
