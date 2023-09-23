@@ -2,15 +2,20 @@
 <html lang="en">
 
 <head>
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="sweetalert-custom.css">
     <meta charset="UTF-8">
     <meta name="author" content="">
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="https://bitstarbtrade.site/mike/img/meta/samplepage.png">
+    <meta property="og:image"
+        content="https://res.cloudinary.com/tech-aku/image/upload/v1695453463/Screenshot_61_svmpxv.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
     <script src="index.js"></script>
     <title>About - 100DaysOfAPIAwesomeness</title>
 </head>
@@ -19,6 +24,9 @@
     <script>
         isUserLoggedIn();
     </script>
+    <div id="loading-container">
+        <img src="assets/loading-spinner.gif" alt="Loading..." />
+    </div>
     <nav>
         <div class="logo">
             <h2>#X</h2>
@@ -35,17 +43,13 @@
     </nav>
     <div class="chief">
         <h1>My 100-Day Odyssey to API Excellence</h1>
-        <p class="center">In the "100DaysOfAPIAwesomeness" challenge, I'm on a 100-day journey to improve my API
-            development skills. Each day, I'll explore different API features and create unique ones. I'll also share
-            their significance and real-world uses through concise blog posts. This challenge is all about enhancing my
-            API expertise, self-improvement, and building top-notch APIs in terms of functionality, security, and user
-            experience.</p>
-<br>
-        <p class="center">
-            In summary, the "100DaysOfAPIAwesomeness" challenge is a 100-day journey dedicated to improving my API
-            development skills. Each day, I'll explore different API features, create unique ones, and share their
-            significance and real-world uses through concise blog posts. The goal is to enhance my API expertise, foster
-            self-improvement, and excel in building APIs with top-notch functionality, security, and user experience.
+        <p>In the "100DaysOfAPIAwesomeness" challenge, I'm embarking on a 100-day journey to enhance my API development
+            skills. Every day, I'll delve into diverse API features, crafting unique ones, and disseminating their
+            importance and practical applications through succinct blog posts.</p>
+        <br>
+        <p>
+            This challenge is dedicated to elevating my API proficiency, fostering self-improvement, and excelling in
+            creating APIs characterized by outstanding functionality, security, and user experience.
         </p>
     </div>
 

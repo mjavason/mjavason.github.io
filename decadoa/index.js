@@ -1,10 +1,82 @@
+const CONSTANTS = {
+  MESSAGES: {
+    FETCHED: 'Resource retrieved successfully',
+    UPDATED: 'Resource updated successfully',
+    ERROR: 'Oops! An error occurred while processing the resource',
+    CREATED: 'Resource created successfully',
+    DELETED: 'Resource deleted successfully',
+    SUCCESSFUL: 'Successful',
+    ASSIGNED: 'Resource assignment completed successfully',
+    NOT_FOUND: 'Sorry, the requested resource was not found',
+    DEFAULT: "We've received your request and are processing it",
+    ALREADY_EXISTS: 'This resource already exists',
+    USER_ALREADY_EXISTS: 'The user already exists',
+    AUTH_DEFAULT: 'Authentication is required for this action',
+    LOGOUT: "You've been successfully logged out. Have a wonderful day!",
+    LOGIN_FIRST: 'Oops! Please log in first to proceed',
+    LOGGED_IN: "You've been successfully logged in",
+    LOGIN_FAILURE: 'Login failed. Please check your username and password',
+    USER_UNAUTHORIZED:
+      'Sorry, you are not authorized to perform this operation',
+    USER_NOT_FOUND: 'User not found',
+    MAIL_SENT: 'Email sent successfully. Please check your inbox!',
+    INVALID_UNIQUE_ID: 'Invalid unique identifier provided',
+    UNKNOWN_ERROR: 'Oops! An unknown error occurred',
+    AUTH_FAILURE: 'Authentication failed. Please check your credentials',
+    FORBIDDEN: "Sorry, you don't have permission to access this resource",
+    AUTHENTICATION_FAILURE: 'Authentication failed. Please log in again',
+    NOT_AUTHENTICATED: 'Oops! You need to be authenticated for this action',
+    BAD_PARAMETERS: 'Oops! Invalid parameters were provided',
+    INTERNAL_ERROR: 'An internal error occurred. Our team is addressing it!',
+    SUCCESS_MSG_RESPONSE: 'Success! The operation was completed successfully',
+    FAILURE_MSG_RESPONSE: 'Oops! The operation failed to complete',
+    ACCESS_TOKEN_ERROR_RESPONSE: 'Access token is invalid. Please log in again',
+    TOKEN_REFRESH_RESPONSE:
+      'Success! The access token was refreshed successfully',
+    ROUTE_NOT_FOUND: "Sorry, the page you're looking for doesn't exist.",
+  },
+
+  TITLES: {},
+};
+
+document.addEventListener('DOMContentLoaded', function () {
+  const logoutButton = document.getElementById('logout');
+  // const loginButton = document.getElementById('login');
+  const loginForm = document.getElementById('login-form');
+
+  if (!logoutButton) {
+  } else {
+    logoutButton.addEventListener('click', () => {
+      logout();
+    });
+  }
+
+  // if (!loginButton) {
+  // } else {
+  //   loginButton.addEventListener('click', () => {
+  //     login();
+  //   });
+  // }
+
+  if (!loginForm) {
+    console.log('login form not found');
+  } else {
+    loginForm.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      const requiredFields = ['username', 'password'];
+      checkAndCallFunction(requiredFields, login('username', 'password'));
+    });
+  }
+});
+
 function sendRequest(
   method,
   url,
   data = null,
   successCallback,
   errorCallback,
-  authToken = null
+  authToken = null,
 ) {
   const requestOptions = {
     method: method,
@@ -23,18 +95,18 @@ function sendRequest(
   }
 
   fetch(url, requestOptions)
-    .then((response) => {
+    .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
       return response.json();
     })
-    .then((responseData) => {
+    .then(responseData => {
       if (successCallback && typeof successCallback === 'function') {
         successCallback(responseData);
       }
     })
-    .catch((error) => {
+    .catch(error => {
       if (errorCallback && typeof errorCallback === 'function') {
         errorCallback(error);
       }
@@ -83,107 +155,167 @@ function redirectToPage(page) {
   window.location.href = page;
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  // Attach a click event listener to the button
-  const logoutButton = document.getElementById('logout');
-  const loginButton = document.getElementById('login');
+function showAlert(
+  icon,
+  title,
+  message,
+  confirmButtonText,
+  cancelButtonText,
+  callback,
+) {
+  Swal.fire({
+    icon: icon,
+    title: title,
+    text: message,
+    confirmButtonText: confirmButtonText,
+    cancelButtonText: cancelButtonText,
+    showCancelButton: true, // Show the Cancel button
+    allowOutsideClick: () => Swal.getPopup().isOutsideClickAllowed(), // Enable outside click
+  }).then(result => {
+    if (result.isConfirmed) {
+      if (callback) {
+        callback();
+      }
+    } else if (result.dismiss === Swal.DismissReason.cancel) {
+      // Handle Cancel button click here, or leave it empty
+    }
+  });
+}
 
-  if (!logoutButton) {
+function showSuccessAlert() {
+  Swal.fire({
+    icon: 'success',
+    title: 'Success',
+    text: 'Operation completed successfully!',
+    confirmButtonText: 'OK',
+    allowOutsideClick: true,
+  }).then(() => {
+    // Handle OK button click here, or leave it empty
+  });
+}
+
+function showErrorAlert() {
+  Swal.fire({
+    icon: 'error',
+    title: 'Error',
+    text: 'An error occurred!',
+    confirmButtonText: 'OK',
+    allowOutsideClick: true,
+  }).then(() => {
+    // Handle OK button click here, or leave it empty
+  });
+}
+
+function loginOriginal(email, password) {
+  showLoading();
+  setSessionToken(12345);
+  Swal.fire({
+    icon: 'success',
+    title: 'Login Successful',
+    text: 'You have successfully logged in!',
+    confirmButtonText: 'OK',
+    allowOutsideClick: true, // Allow clicking outside the modal
+  }).then(() => {
+    hideLoading();
+    redirectToPage('index.html');
+  });
+}
+
+function login(email, password) {
+  showLoading();
+  setSessionToken(12345);
+
+  // Use setTimeout to delay the redirection
+  setTimeout(() => {
+    hideLoading();
+    // Swal.fire({
+    //   icon: 'success',
+    //   title: 'Login Successful',
+    //   text: 'You have successfully logged in!',
+    //   confirmButtonText: 'OK',
+    //   allowOutsideClick: true, // Allow clicking outside the modal
+    // }).then(() => {
+    // });
+    redirectToPage('index.html');
+  }, 5000); // 5000 milliseconds = 5 seconds
+}
+
+function register(email, password, confirmPassword) {
+  setSessionToken(12345);
+  Swal.fire({
+    icon: 'success',
+    title: 'Registration Successful',
+    text: 'You have successfully registered!',
+    confirmButtonText: 'OK',
+    allowOutsideClick: true,
+  }).then(() => {
+    redirectToPage('index.html');
+  });
+}
+
+function logout() {
+  Swal.fire({
+    icon: 'warning',
+    title: 'Logout Confirmation',
+    text: 'Are you sure you want to log out?',
+    showCancelButton: true,
+    confirmButtonText: 'Yes, Logout',
+    cancelButtonText: 'Cancel',
+    allowOutsideClick: true, // Allow clicking outside the modal
+  }).then(result => {
+    if (result.isConfirmed) {
+      showLoading();
+      setTimeout(() => {
+        // User clicked "Yes, Logout," perform the logout action
+        deleteSessionToken();
+        hideLoading();
+        redirectToPage('login.html');
+      }, 1500); // 5000 milliseconds = 5 seconds
+    }
+    // If the user clicked "Cancel," no action is taken
+  });
+}
+
+function checkAndCallFunction(requiredFields, callback) {
+  // Check if all required fields are filled
+  const areAllFilled = requiredFields.every(fieldId => {
+    const field = document.getElementById(fieldId);
+    return field && field.value.trim() !== '';
+  });
+
+  if (areAllFilled) {
+    // Call the provided callback function when all required fields are filled
+    if (typeof callback === 'function') {
+      callback();
+    }
   } else {
-    logoutButton.addEventListener('click', () => {
-      deleteSessionToken();
-      redirectToPage('login.html');
+    // Display a SweetAlert with an error message
+    Swal.fire({
+      icon: 'error',
+      title: 'Missing Form Items',
+      text: 'Please fill out all required fields.',
     });
   }
+}
 
-  if (!loginButton) {
+// Function to show the loading indicator
+function showLoading() {
+  const loadingContainer = document.getElementById('loading-container');
+
+  if (!loadingContainer) {
+    console.log('loading container not found');
   } else {
-    loginButton.addEventListener('click', () => {
-      setSessionToken(12345);
-      redirectToPage('index.html');
-    });
+    loadingContainer.style.display = 'block';
   }
-});
+}
 
-///<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<         >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-///<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<         >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-///<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<         >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// Function to hide the loading indicator
+function hideLoading() {
+  const loadingContainer = document.getElementById('loading-container');
 
-// Example usage with a Bearer token:
-// const authToken = 'your_bearer_token_here'; // Replace with your actual token
-// const url = 'https://example.com/api/resource'; // Replace with your API URL
-
-// // Making a GET request with a Bearer token
-// sendRequest(
-//   'GET',
-//   url,
-//   null,
-//   (data) => {
-//     console.log('GET success:', data);
-//   },
-//   (error) => {
-//     console.error('GET error:', error);
-//   },
-//   authToken
-// );
-
-// // Example usage:
-// // GET request
-// sendRequest(
-//   'GET',
-//   'https://jsonplaceholder.typicode.com/posts',
-//   null,
-//   (data) => {
-//     console.log('GET success:', data);
-//   },
-//   (error) => {
-//     console.error('GET error:', error);
-//   }
-// );
-
-// // DELETE request
-// sendRequest(
-//   'DELETE',
-//   'https://jsonplaceholder.typicode.com/posts/1',
-//   null,
-//   (data) => {
-//     console.log('DELETE success:', data);
-//   },
-//   (error) => {
-//     console.error('DELETE error:', error);
-//   }
-// );
-
-// // PATCH request
-// const patchData = {
-//   title: 'Updated Post Title',
-// };
-// sendRequest(
-//   'PATCH',
-//   'https://jsonplaceholder.typicode.com/posts/1',
-//   patchData,
-//   (data) => {
-//     console.log('PATCH success:', data);
-//   },
-//   (error) => {
-//     console.error('PATCH error:', error);
-//   }
-// );
-
-// // POST request
-// const postData = {
-//   title: 'New Post',
-//   body: 'This is a new post.',
-//   userId: 1,
-// };
-// sendRequest(
-//   'POST',
-//   'https://jsonplaceholder.typicode.com/posts',
-//   postData,
-//   (data) => {
-//     console.log('POST success:', data);
-//   },
-//   (error) => {
-//     console.error('POST error:', error);
-//   }
-// );
+  if (!loadingContainer) {
+    console.log('loading container not found');
+  } else {
+    loadingContainer.style.display = 'none';
+  }
+}

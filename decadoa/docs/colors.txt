@@ -1,0 +1,12 @@
+Primary Colors:
+#007acc (Blue)
+#fff (White)
+
+Secondary Colors:
+#444
+#333
+#005f9f (Darker Blue)
+
+Tertiary Colors:
+#555
+#4caf50 (Green)
