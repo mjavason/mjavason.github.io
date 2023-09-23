@@ -79,12 +79,12 @@ nav {
 .chief {
   margin: 20px auto; /* Center content horizontally */
   /* height: 100%; */
-  width: 95%;
+  width: 99%;
   background-color: #fff; /* Darker background color */
   min-height: 300px;
   /* border: 2px solid #f90; */
   /* height: 100%; */
-  padding: 1em 10%;
+  padding: 1em 5%;
 }
 
 h1 {
@@ -356,7 +356,7 @@ footer {
 
   .day-box {
     font-size: 1rem; /* Further adjust font size for mobile screens */
-    padding: 5px; /* Adjust padding for smaller screens */
+    padding: 5px;
   }
 }
 
