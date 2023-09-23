@@ -76,7 +76,7 @@ function sendRequest(
   data = null,
   successCallback,
   errorCallback,
-  authToken = null
+  authToken = null,
 ) {
   const requestOptions = {
     method: method,
@@ -95,18 +95,18 @@ function sendRequest(
   }
 
   fetch(url, requestOptions)
-    .then((response) => {
+    .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
       return response.json();
     })
-    .then((responseData) => {
+    .then(responseData => {
       if (successCallback && typeof successCallback === 'function') {
         successCallback(responseData);
       }
     })
-    .catch((error) => {
+    .catch(error => {
       if (errorCallback && typeof errorCallback === 'function') {
         errorCallback(error);
       }
@@ -161,7 +161,7 @@ function showAlert(
   message,
   confirmButtonText,
   cancelButtonText,
-  callback
+  callback,
 ) {
   Swal.fire({
     icon: icon,
@@ -171,7 +171,7 @@ function showAlert(
     cancelButtonText: cancelButtonText,
     showCancelButton: true, // Show the Cancel button
     allowOutsideClick: () => Swal.getPopup().isOutsideClickAllowed(), // Enable outside click
-  }).then((result) => {
+  }).then(result => {
     if (result.isConfirmed) {
       if (callback) {
         callback();
@@ -262,7 +262,7 @@ function logout() {
     confirmButtonText: 'Yes, Logout',
     cancelButtonText: 'Cancel',
     allowOutsideClick: true, // Allow clicking outside the modal
-  }).then((result) => {
+  }).then(result => {
     if (result.isConfirmed) {
       showLoading();
       setTimeout(() => {
@@ -278,7 +278,7 @@ function logout() {
 
 function checkAndCallFunction(requiredFields, callback) {
   // Check if all required fields are filled
-  const areAllFilled = requiredFields.every((fieldId) => {
+  const areAllFilled = requiredFields.every(fieldId => {
     const field = document.getElementById(fieldId);
     return field && field.value.trim() !== '';
   });
