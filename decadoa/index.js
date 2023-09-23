@@ -39,6 +39,37 @@ const CONSTANTS = {
   TITLES: {},
 };
 
+document.addEventListener('DOMContentLoaded', function () {
+  const logoutButton = document.getElementById('logout');
+  // const loginButton = document.getElementById('login');
+  const loginForm = document.getElementById('login-form');
+
+  if (!logoutButton) {
+  } else {
+    logoutButton.addEventListener('click', () => {
+      logout();
+    });
+  }
+
+  // if (!loginButton) {
+  // } else {
+  //   loginButton.addEventListener('click', () => {
+  //     login();
+  //   });
+  // }
+
+  if (!loginForm) {
+    console.log('login form not found');
+  } else {
+    loginForm.addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      const requiredFields = ['username', 'password'];
+      checkAndCallFunction(requiredFields, login('username', 'password'));
+    });
+  }
+});
+
 function sendRequest(
   method,
   url,
@@ -175,7 +206,8 @@ function showErrorAlert() {
   });
 }
 
-function login(email, password) {
+function loginOriginal(email, password) {
+  showLoading();
   setSessionToken(12345);
   Swal.fire({
     icon: 'success',
@@ -184,8 +216,28 @@ function login(email, password) {
     confirmButtonText: 'OK',
     allowOutsideClick: true, // Allow clicking outside the modal
   }).then(() => {
+    hideLoading();
     redirectToPage('index.html');
   });
+}
+
+function login(email, password) {
+  showLoading();
+  setSessionToken(12345);
+
+  // Use setTimeout to delay the redirection
+  setTimeout(() => {
+    hideLoading();
+    // Swal.fire({
+    //   icon: 'success',
+    //   title: 'Login Successful',
+    //   text: 'You have successfully logged in!',
+    //   confirmButtonText: 'OK',
+    //   allowOutsideClick: true, // Allow clicking outside the modal
+    // }).then(() => {
+    // });
+    redirectToPage('index.html');
+  }, 5000); // 5000 milliseconds = 5 seconds
 }
 
 function register(email, password, confirmPassword) {
@@ -212,9 +264,13 @@ function logout() {
     allowOutsideClick: true, // Allow clicking outside the modal
   }).then((result) => {
     if (result.isConfirmed) {
-      // User clicked "Yes, Logout," perform the logout action
-      deleteSessionToken();
-      redirectToPage('login.html');
+      showLoading();
+      setTimeout(() => {
+        // User clicked "Yes, Logout," perform the logout action
+        deleteSessionToken();
+        hideLoading();
+        redirectToPage('login.html');
+      }, 1500); // 5000 milliseconds = 5 seconds
     }
     // If the user clicked "Cancel," no action is taken
   });
@@ -242,115 +298,24 @@ function checkAndCallFunction(requiredFields, callback) {
   }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  const logoutButton = document.getElementById('logout');
-  // const loginButton = document.getElementById('login');
-  const loginForm = document.getElementById('login-form');
+// Function to show the loading indicator
+function showLoading() {
+  const loadingContainer = document.getElementById('loading-container');
 
-  if (!logoutButton) {
+  if (!loadingContainer) {
+    console.log('loading container not found');
   } else {
-    logoutButton.addEventListener('click', () => {
-      logout();
-    });
+    loadingContainer.style.display = 'block';
   }
+}
 
-  // if (!loginButton) {
-  // } else {
-  //   loginButton.addEventListener('click', () => {
-  //     login();
-  //   });
-  // }
+// Function to hide the loading indicator
+function hideLoading() {
+  const loadingContainer = document.getElementById('loading-container');
 
-  if (!loginForm) {
-    console.log('login form not found');
+  if (!loadingContainer) {
+    console.log('loading container not found');
   } else {
-    loginForm.addEventListener('submit', function (event) {
-      event.preventDefault(); // Prevent the default form submission
-
-      const requiredFields = ['username', 'password'];
-      checkAndCallFunction(requiredFields, login('username', 'password'));
-    });
+    loadingContainer.style.display = 'none';
   }
-});
-///<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<         >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-///<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<         >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-///<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<         >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-// Example usage with a Bearer token:
-// const authToken = 'your_bearer_token_here'; // Replace with your actual token
-// const url = 'https://example.com/api/resource'; // Replace with your API URL
-
-// // Making a GET request with a Bearer token
-// sendRequest(
-//   'GET',
-//   url,
-//   null,
-//   (data) => {
-//     console.log('GET success:', data);
-//   },
-//   (error) => {
-//     console.error('GET error:', error);
-//   },
-//   authToken
-// );
-
-// // Example usage:
-// // GET request
-// sendRequest(
-//   'GET',
-//   'https://jsonplaceholder.typicode.com/posts',
-//   null,
-//   (data) => {
-//     console.log('GET success:', data);
-//   },
-//   (error) => {
-//     console.error('GET error:', error);
-//   }
-// );
-
-// // DELETE request
-// sendRequest(
-//   'DELETE',
-//   'https://jsonplaceholder.typicode.com/posts/1',
-//   null,
-//   (data) => {
-//     console.log('DELETE success:', data);
-//   },
-//   (error) => {
-//     console.error('DELETE error:', error);
-//   }
-// );
-
-// // PATCH request
-// const patchData = {
-//   title: 'Updated Post Title',
-// };
-// sendRequest(
-//   'PATCH',
-//   'https://jsonplaceholder.typicode.com/posts/1',
-//   patchData,
-//   (data) => {
-//     console.log('PATCH success:', data);
-//   },
-//   (error) => {
-//     console.error('PATCH error:', error);
-//   }
-// );
-
-// // POST request
-// const postData = {
-//   title: 'New Post',
-//   body: 'This is a new post.',
-//   userId: 1,
-// };
-// sendRequest(
-//   'POST',
-//   'https://jsonplaceholder.typicode.com/posts',
-//   postData,
-//   (data) => {
-//     console.log('POST success:', data);
-//   },
-//   (error) => {
-//     console.error('POST error:', error);
-//   }
-// );
+}
