@@ -5,11 +5,14 @@
   padding: 0;
 }
 
+a {
+  color: #444;
+}
+
 /* Base styles for the body */
 body {
-  background-color: #333; /* Dark background color */
-  color: #fff; /* White text color */
-  margin: 0;
+  background-color: #fff; /* Dark background color */
+  color: #444; /* White text color */
   font-family: Arial, sans-serif; /* Choose a suitable font-family */
   display: flex;
   flex-direction: column;
@@ -22,28 +25,30 @@ nav {
   padding: 10px 0;
 }
 
+.center {
+  text-align: center;
+}
+
 .logo {
   width: 30%;
   display: inline-block;
-  overflow: hidden;
   text-align: center;
   margin: 5px;
-  padding: 5px;
+  /* border: red solid 5px; */
 }
 
 .logo h2 {
-  margin: 0;
-  padding: 5px;
-  font-size: 24px; /* Increased font size */
+  font-size: 4rem; /* Increased font size */
   color: #fff; /* White text color */
 }
 
 .navbar {
   width: 60%;
   display: inline-block;
-  text-align: center;
+  text-align: right;
   padding: 5px;
   margin: 5px;
+  /* border: red solid 5px; */
 }
 
 .navbar ul {
@@ -51,36 +56,44 @@ nav {
 }
 
 .navbar li {
-  display: inline;
-  margin-right: 20px; /* Increased spacing between navigation items */
+  display: inline-block;
+  margin-right: 1rem; /* Increased spacing between navigation items */
 }
 
 .navbar a {
-  font-size: 18px;
+  font-size: 1rem;
   text-decoration: none;
   color: #fff;
   transition: color 0.3s; /* Smooth color transition */
 }
 
 .navbar a:hover {
+  /* padding: 10px; */
   color: #333; /* Blue color on hover */
-  font-size: large;
+  /* background-color: white; */
+  /* border-radius: 25%; */
+  transition: 0.5s;
 }
 
 /* Content section styles */
 .chief {
-  width: 85%;
   margin: 20px auto; /* Center content horizontally */
-  padding: 20px;
-  background-color: #444; /* Darker background color */
+  /* height: 100%; */
+  width: 95%;
+  background-color: #fff; /* Darker background color */
   min-height: 300px;
-  border: 2px solid #f90; /* Orange border */
+  /* border: 2px solid #f90; */
+  /* height: 100%; */
+  padding: 1em 10%;
 }
 
 h1 {
-  font-size: 24px; /* Increased font size */
+  font-size: 2.5rem; /* Increased font size */
+  font-weight: 700;
   text-align: center;
   margin-bottom: 20px; /* Add some spacing below the heading */
+  line-height: 80%;
+  letter-spacing: -0.09rem;
 }
 
 #main-button {
@@ -105,6 +118,7 @@ h1 {
 
 /* Footer styles */
 footer {
+  font-size: 1rem;
   flex-shrink: 0; /* Prevent the footer from shrinking */
   text-align: center;
   margin-top: auto; /* Push the footer to the bottom */
@@ -113,15 +127,14 @@ footer {
   color: #fff; /* White text color */
 }
 
-/* Existing CSS styles (no changes) */
-
 /* New styles for the login form */
 #login-form {
-  max-width: 300px;
+  max-width: 400px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 2rem;
   background-color: #555; /* Darker background color */
-  /* border: 2px solid #f90;
+  border-radius: 5%;
+  margin-bottom: 1rem;
 }
 
 #login-form h1 {
@@ -139,12 +152,13 @@ footer {
 }
 
 #login-form input[type='text'],
+#login-form input[type='email'],
 #login-form input[type='password'] {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
   font-size: 16px;
-  background-color: #ccc; /* Light gray background */
+  /* background-color: #ccc; Light gray background */
   border: 1px solid #999; /* Gray border */
 }
 
@@ -163,11 +177,37 @@ footer {
   background-color: #005f9f; /* Darker blue on hover */
 }
 
+#loading-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(255, 255, 255, 0.8); */
+  background: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  padding-top: 20%;
+}
+
+#loading-container img {
+  width: 50px; /* Adjust the size as needed */
+}
+
 /* Responsive styles for smaller screens */
 @media screen and (max-width: 480px) {
+  nav {
+    display: block;
+    text-align: right;
+  }
+
+  .logo {
+    text-align: center;
+  }
+
   #login-form {
     max-width: 100%;
-    padding: 10px;
+    padding: 1rem;
   }
 
   #login-form input[type='text'],
