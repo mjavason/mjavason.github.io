@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET Request Loop with Delay</title>
+</head>
+<body>
+    <button id="startButton">Start GET Requests with Delay</button>
+    
+    <script>
+        document.getElementById('startButton').addEventListener('click', function() {
+            // The URL to which you want to send GET requests
+            const targetUrl = 'https://site-status-checker-l46c.onrender.com';
+
+            // Number of GET requests you want to send
+            const numberOfRequests = 10; // You can change this number
+
+            // Delay in milliseconds (5 minutes)
+            const delay = 300000;
+
+            // Function to send GET requests after the specified delay
+            function sendGetRequestWithDelay(i) {
+                setTimeout(() => {
+                    fetch(targetUrl)
+                        .then(response => response.text())
+                        .then(data => console.log(`GET request ${i + 1} response:`, data))
+                        .catch(error => console.error(`Error in GET request ${i + 1}:`, error));
+                }, i * delay);
+            }
+
+            // Loop to schedule GET requests with delay
+            for (let i = 0; i < numberOfRequests; i++) {
+                sendGetRequestWithDelay(i);
+            }
+        });
+    </script>
+</body>
+</html>
