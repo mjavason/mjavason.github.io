@@ -1,39 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GET Request Loop with Delay</title>
-</head>
-<body>
-    <button id="startButton">Start GET Requests with Delay</button>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GET Request Loop with Display and Dates</title>
+    <style>
+      #output {
+        white-space: pre-line;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="startButton">Start GET Requests with Display</button>
+    <div id="output"></div>
+
     <script>
-        document.getElementById('startButton').addEventListener('click', function() {
-            // The URL to which you want to send GET requests
-            const targetUrl = 'https://site-status-checker-l46c.onrender.com';
+      document
+        .getElementById('startButton')
+        .addEventListener('click', function () {
+          const targetUrl = 'https://site-status-checker-l46c.onrender.com';
+          const numberOfRequests = 720;
+          const delay = 300000;
 
-            // Number of GET requests you want to send
-            const numberOfRequests = 10; // You can change this number
+          const outputDiv = document.getElementById('output');
+          outputDiv.innerHTML = ''; // Clear previous content
 
-            // Delay in milliseconds (5 minutes)
-            const delay = 300000;
+          function sendGetRequestWithDelay(i) {
+            if (i < numberOfRequests) {
+              const currentTime = new Date().toLocaleString();
+              const output = `GET request ${i + 1} sent at ${currentTime}\n`;
 
-            // Function to send GET requests after the specified delay
-            function sendGetRequestWithDelay(i) {
-                setTimeout(() => {
-                    fetch(targetUrl)
-                        .then(response => response.text())
-                        .then(data => console.log(`GET request ${i + 1} response:`, data))
-                        .catch(error => console.error(`Error in GET request ${i + 1}:`, error));
-                }, i * delay);
+              fetch(targetUrl)
+                .then((response) => response.text())
+                .then((data) => {
+                  const responseTime = new Date().toLocaleString();
+                  const result = `GET request ${
+                    i + 1
+                  } response at ${responseTime}:\n${data}\n\n`;
+                  outputDiv.innerHTML += output + result;
+                })
+                .catch((error) => {
+                  const errorTime = new Date().toLocaleString();
+                  const result = `Error in GET request ${
+                    i + 1
+                  } at ${errorTime}:\n${error}\n\n`;
+                  outputDiv.innerHTML += output + result;
+                });
+
+              setTimeout(() => {
+                sendGetRequestWithDelay(i + 1);
+              }, delay);
             }
+          }
 
-            // Loop to schedule GET requests with delay
-            for (let i = 0; i < numberOfRequests; i++) {
-                sendGetRequestWithDelay(i);
-            }
+          sendGetRequestWithDelay(0);
         });
     </script>
-</body>
+  </body>
 </html>
