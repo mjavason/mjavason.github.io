@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GET Request Loop with Display and Dates</title>
+    <style>
+      #output {
+        white-space: pre-line;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="startButton">Start GET Requests with Display</button>
+    <div id="output"></div>
+
+    <script>
+      document
+        .getElementById('startButton')
+        .addEventListener('click', function () {
+          const targetUrl = 'https://site-status-checker-l46c.onrender.com';
+          const numberOfRequests = 720;
+          const delay = 300000;
+
+          const outputDiv = document.getElementById('output');
+          outputDiv.innerHTML = ''; // Clear previous content
+
+          function sendGetRequestWithDelay(i) {
+            if (i < numberOfRequests) {
+              const currentTime = new Date().toLocaleString();
+              const output = `GET request ${i + 1} sent at ${currentTime}\n`;
+
+              fetch(targetUrl)
+                .then((response) => response.text())
+                .then((data) => {
+                  const responseTime = new Date().toLocaleString();
+                  const result = `GET request ${
+                    i + 1
+                  } response at ${responseTime}:\n${data}\n\n`;
+                  outputDiv.innerHTML += output + result;
+                })
+                .catch((error) => {
+                  const errorTime = new Date().toLocaleString();
+                  const result = `Error in GET request ${
+                    i + 1
+                  } at ${errorTime}:\n${error}\n\n`;
+                  outputDiv.innerHTML += output + result;
+                });
+
+              setTimeout(() => {
+                sendGetRequestWithDelay(i + 1);
+              }, delay);
+            }
+          }
+
+          sendGetRequestWithDelay(0);
+        });
+    </script>
+  </body>
+</html>
