@@ -57,9 +57,16 @@
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
       }
 
-      #about,
-      #projects {
+      #about {
         height: 90vh; /* Full height of the viewport */
+        display: flex;
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
+        flex-direction: column; /* Optional: Arrange content in a column */
+      }
+
+      #projects {
+        height: 100vh; /* Full height of the viewport */
         display: flex;
         justify-content: center; /* Center content horizontally */
         align-items: center; /* Center content vertically */
@@ -316,7 +323,7 @@
               <ul class="social-links">
                 <li>
                   <a
-                    href="#"
+                    href="https://github.com/mjavason"
                     class="fab fa-github m-3"
                     data-toggle="tooltip"
                     data-placement="left"
@@ -405,7 +412,7 @@
         <div class="row">
           <div class="col-lg-12 col-12">
             <p class="copyright-text text-center">
-              Copyright &copy; 2023 Tech Acoustic. All rights reserved
+              Copyright &copy; 2024 Tech Acoustic. All rights reserved
             </p>
           </div>
         </div>
