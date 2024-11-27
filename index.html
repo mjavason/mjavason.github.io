@@ -42,6 +42,30 @@
         margin: 10px;
       }
 
+         /* Custom Style for Project Info */
+         .project-info {
+        border-radius: 10px; /* Slightly rounded corners for a professional look */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle, realistic shadow */
+        padding: 20px; /* Adjust padding for consistency */
+        margin: 15px; /* Balanced spacing around the element */
+        background-color: #ffffff; /* Neutral background for clarity */
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+      }
+
+      .project-info:hover {
+        transform: translateY(-5px); /* Subtle lift on hover */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+      }
+
+      #about,
+      #projects {
+        height: 100vh; /* Full height of the viewport */
+        display: flex;
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
+        flex-direction: column; /* Optional: Arrange content in a column */
+      }
+
       @media (max-width: 900px) {
         .project-info {
           padding: 10px;
