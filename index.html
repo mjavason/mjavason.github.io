@@ -49,7 +49,15 @@
         padding: 20px; /* Adjust padding for consistency */
         margin: 15px; /* Balanced spacing around the element */
         background-color: #ffffff; /* Neutral background for clarity */
-        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+        transition: transform 0.3s ease, box-shadow 0.3s ease,
+          background-color 0.3s ease; /* Smooth hover effect */
+      }
+
+      /* Dark Mode for Project Info */
+      .project-info.dark-mode {
+        background-color: #333333; /* Dark background for dark mode */
+        color: #ffffff; /* Light text for readability */
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Adjusted shadow for dark mode */
       }
 
       .project-info:hover {
@@ -107,7 +115,9 @@
               <a href="#project" class="nav-link">Projects</a>
             </li>
             <li class="nav-item">
-              <a href="https://flowcv.com/resume/ske4odpvm2" class="nav-link">Resume</a>
+              <a href="https://flowcv.com/resume/ske4odpvm2" class="nav-link"
+                >Resume</a
+              >
             </li>
             <li class="nav-item">
               <a href="#contact" class="nav-link">Contact</a>

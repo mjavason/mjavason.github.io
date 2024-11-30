@@ -6,6 +6,8 @@
     $('.color-mode').click(function(){
         $('.color-mode-icon').toggleClass('active')
         $('body').toggleClass('dark-mode')
+        $('.project-info').toggleClass('dark-mode')
+        $('#projects').toggleClass('dark-mode')
     })
 
     // HEADER
