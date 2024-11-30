@@ -1,0 +1,3 @@
+Client projects, Hobby projects, Live projects.. everything. 
+
+The ones that are live will link to the website, the ones that are open source I'll link to GitHub, The ones that are down and closed source I'll create a mini presentation describing what it does.

@@ -1,0 +1,22 @@
+Using the data above, create copies of this html. Sort by newest first
+
+            <div class="owl-carousel owl-theme">
+  <!-- item start -->
+              <div class="item">
+                <div class="project-info">
+                  <a target="_blank" href="https://github.com/mjavason/tatb">
+                    <img
+                      src="images/project/currency.jpeg"
+                      class="img-fluid"
+                      alt="Tech Blog Image"
+                    />
+                  </a>
+                </div>
+                <h5 style="font-size: 20px">Tech Blog</h5>
+                <p style="font-size: 16px">
+                  This is just a simple blog post showcasing various tech
+                  topics.
+                </p>
+              </div>
+              <!-- item end -->
+              </div>
