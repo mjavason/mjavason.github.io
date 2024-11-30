@@ -5,7 +5,7 @@
     "image": "images/project/currency.jpeg",
     "imageAlt": "A screenshot of the Android Currency Converter app",
     "summary": "A mobile app for real-time currency conversion supporting multiple currencies.",
-    "project_link": "https://github.com/mjavason/android-currency-converter"
+    "project_link": "https://github.com/mjavason/TA-Currency-Converter"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "image": "images/project/landing.jpeg",
     "imageAlt": "A screenshot of the company landing page",
     "summary": "A responsive landing page built with HTML, CSS, and JavaScript.",
-    "project_link": "https://github.com/mjavason/company-landing-page"
+    "project_link": "https://github.com/mjavason/TA"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "image": "images/project/list.jpeg",
     "imageAlt": "A screenshot of the Android Todo List app",
     "summary": "An app to manage tasks with features like task creation and categorization.",
-    "project_link": "https://github.com/mjavason/android-todo-list-app"
+    "project_link": "https://github.com/mjavason/talist"
   },
   {
     "id": 4,
@@ -37,7 +37,7 @@
     "image": "images/project/tapq.jpeg",
     "imageAlt": "A screenshot of the ESUT Past Questions Aggregator site",
     "summary": "A site to access and download past exam questions for ESUT students.",
-    "project_link": "https://github.com/mjavason/esut-past-questions-aggregator"
+    "project_link": "https://github.com/mjavason/TA-Past-Questions"
   },
   {
     "id": 6,
@@ -45,6 +45,6 @@
     "image": "images/project/tats.jpeg",
     "imageAlt": "A screenshot of the Electronics Ecommerce Store site",
     "summary": "An e-commerce site for buying and selling electronic products with a shopping cart and payment integration.",
-    "project_link": "https://github.com/mjavason/electronics-ecommerce-store"
+    "project_link": "https://github.com/mjavason/TA-Tech-Store"
   }
 ]
