@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faNodeJs,
   faDocker,
-  faPython,
+//   faPython,
 } from '@fortawesome/free-brands-svg-icons';
 import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
@@ -35,15 +35,15 @@ const labelsSecond = [
   'CI/CD',
 ];
 
-const labelsThird = [
-  'OpenAI',
-  'Groq',
-  'LangChain',
-  'Qdrant',
-  'Hugging Face',
-  'LlamaIndex',
-  'Streamlit',
-];
+// const labelsThird = [
+//   'OpenAI',
+//   'Groq',
+//   'LangChain',
+//   'Qdrant',
+//   'Hugging Face',
+//   'LlamaIndex',
+//   'Streamlit',
+// ];
 
 function Expertise() {
   return (
