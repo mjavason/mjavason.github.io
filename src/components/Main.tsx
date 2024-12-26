@@ -2,7 +2,7 @@ import React from "react";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
-import passport from '../assets/images/passport.png';
+import passport from '../assets/images/passport.jpg';
 import '../assets/styles/Main.scss';
 
 function Main() {
