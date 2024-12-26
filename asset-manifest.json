@@ -1,9 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.e03cf415.css",
-    "main.js": "/static/js/main.3457078e.js",
+    "main.js": "/static/js/main.4604e9f9.js",
     "static/js/453.b05d8aa5.chunk.js": "/static/js/453.b05d8aa5.chunk.js",
-    "static/media/passport.png": "/static/media/passport.cce8d844dcc58208a49b.png",
     "static/media/mock10.png": "/static/media/mock10.2d05b02ba569a430a255.png",
     "static/media/mock09.png": "/static/media/mock09.e18677ccfc932e52d754.png",
     "static/media/mock08.png": "/static/media/mock08.13f46873fdbd382f4b76.png",
@@ -14,15 +13,16 @@
     "static/media/mock06.png": "/static/media/mock06.ea816617e0d0fa0f63ca.png",
     "static/media/bg-dark.png": "/static/media/bg-dark.f420c6b8458af72de935.png",
     "static/media/mock01.png": "/static/media/mock01.61bd486a54bf6e17ee5a.png",
+    "static/media/passport.jpg": "/static/media/passport.d5995ad71432a014c10e.jpg",
     "static/media/mock02.png": "/static/media/mock02.bced48ae9cdda3acf1a3.png",
     "static/media/mock03.png": "/static/media/mock03.a4600719e0b5d2a3155b.png",
     "index.html": "/index.html",
     "main.e03cf415.css.map": "/static/css/main.e03cf415.css.map",
-    "main.3457078e.js.map": "/static/js/main.3457078e.js.map",
+    "main.4604e9f9.js.map": "/static/js/main.4604e9f9.js.map",
     "453.b05d8aa5.chunk.js.map": "/static/js/453.b05d8aa5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e03cf415.css",
-    "static/js/main.3457078e.js"
+    "static/js/main.4604e9f9.js"
   ]
 }
