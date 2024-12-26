@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import '../assets/styles/Contact.scss';
-// import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
@@ -68,6 +68,7 @@ function Contact() {
                 id="outlined-required"
                 label="Your Name"
                 placeholder="What's your name?"
+                disabled={true}
                 value={name}
                 onChange={(e) => {
                   setName(e.target.value);
@@ -77,6 +78,7 @@ function Contact() {
               />
               <TextField
                 required
+                disabled={true}
                 id="outlined-required"
                 label="Email / Phone"
                 placeholder="How can I reach you?"
@@ -90,6 +92,7 @@ function Contact() {
             </div>
             <TextField
               required
+              disabled={true}
               id="outlined-multiline-static"
               label="Message"
               placeholder="Send me any inquiries or questions"
@@ -103,7 +106,7 @@ function Contact() {
               error={messageError}
               helperText={messageError ? "Please enter the message" : ""}
             />
-            <Button variant="contained" endIcon={<SendIcon />} onClick={sendEmail}>
+            <Button disabled variant="contained" endIcon={<SendIcon />} onClick={sendEmail}>
               Send
             </Button>
           </Box>
