@@ -20,7 +20,7 @@ function Timeline() {
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Lead Backend Developer</h3>
+            <h3 className="vertical-timeline-element-title">Backend Developer</h3>
             <h4 className="vertical-timeline-element-subtitle">Enugu, Nigeria</h4>
             <p>
               Javascript, Typescript, Nest.js, MongoDB, RESTful APIs, Team Collaboration, Scrum, Agile, Git, GitHub, Postman, Swagger, Redis, Google Maps API, Telegram API
